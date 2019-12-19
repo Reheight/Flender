@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CourierPrime-Regular.ttf">
+            <string>CourierPrime-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController" customModule="Flender" customModuleProvider="target">
+            <connections>
+                <outlet property="handleArea" destination="HlW-in-iiI" id="JeQ-AN-n51"/>
+                <outlet property="handleAreaSecondary" destination="Pjj-AA-9iM" id="pzz-LQ-hG2"/>
+                <outlet property="labelView" destination="IcQ-oj-DNm" id="TnP-fY-2Xn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="703"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcQ-oj-DNm">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pjj-AA-9iM">
+                            <rect key="frame" x="8" y="22" width="359" height="6"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-in-iiI">
+                            <rect key="frame" x="102" y="10" width="170" height="29"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0c-ay-Nr4">
+                                    <rect key="frame" x="54" y="2" width="63" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="CourierPrime-Regular" family="Courier Prime" pointSize="21"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMb-uc-lZh">
+                            <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Zku-Yo-9XA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="Pjj-AA-9iM" firstAttribute="leading" secondItem="IcQ-oj-DNm" secondAttribute="leading" constant="8" id="EHT-BW-kAb"/>
+                        <constraint firstItem="uMb-uc-lZh" firstAttribute="leading" secondItem="IcQ-oj-DNm" secondAttribute="leading" id="LA9-ao-HDI"/>
+                        <constraint firstAttribute="height" constant="51" id="QMT-vI-38d"/>
+                        <constraint firstAttribute="trailing" secondItem="Pjj-AA-9iM" secondAttribute="trailing" constant="8" id="XF2-d1-6PU"/>
+                        <constraint firstItem="HlW-in-iiI" firstAttribute="leading" secondItem="IcQ-oj-DNm" secondAttribute="leading" constant="102" id="aOm-Ef-aN2"/>
+                        <constraint firstItem="Pjj-AA-9iM" firstAttribute="top" secondItem="IcQ-oj-DNm" secondAttribute="top" constant="22" id="b6c-dH-3mC"/>
+                        <constraint firstAttribute="trailing" secondItem="uMb-uc-lZh" secondAttribute="trailing" id="bbf-kw-SfU"/>
+                        <constraint firstItem="uMb-uc-lZh" firstAttribute="top" secondItem="HlW-in-iiI" secondAttribute="bottom" constant="10" id="c9J-fH-GBY"/>
+                        <constraint firstAttribute="bottom" secondItem="uMb-uc-lZh" secondAttribute="bottom" constant="1" id="d43-O7-GNS"/>
+                        <constraint firstItem="uMb-uc-lZh" firstAttribute="top" secondItem="Pjj-AA-9iM" secondAttribute="bottom" constant="21" id="dhF-pI-ull"/>
+                        <constraint firstAttribute="trailing" secondItem="HlW-in-iiI" secondAttribute="trailing" constant="103" id="on2-iS-Lgj"/>
+                        <constraint firstItem="HlW-in-iiI" firstAttribute="top" secondItem="IcQ-oj-DNm" secondAttribute="top" constant="10" id="rlB-Mw-4ar"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="IcQ-oj-DNm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JEb-u2-YJp"/>
+                <constraint firstItem="IcQ-oj-DNm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MYh-6T-dv2"/>
+                <constraint firstItem="IcQ-oj-DNm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QGA-9L-U54"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="35.5"/>
+        </view>
+    </objects>
+</document>
