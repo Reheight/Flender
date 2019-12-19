@@ -47,6 +47,7 @@
 		05196F2A23ABFE1D00F2507E /* CourierPrime-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CourierPrime-BoldItalic.ttf"; path = "../../../../../Downloads/Courier_Prime/CourierPrime-BoldItalic.ttf"; sourceTree = "<group>"; };
 		05196F2B23ABFE1D00F2507E /* CourierPrime-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CourierPrime-Italic.ttf"; path = "../../../../../Downloads/Courier_Prime/CourierPrime-Italic.ttf"; sourceTree = "<group>"; };
 		05196F2C23ABFE1D00F2507E /* CourierPrime-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CourierPrime-Bold.ttf"; path = "../../../../../Downloads/Courier_Prime/CourierPrime-Bold.ttf"; sourceTree = "<group>"; };
+		05196F3123AC04A000F2507E /* Flender.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Flender.entitlements; sourceTree = "<group>"; };
 		0527FC6423ABF68E0031454F /* Flender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0527FC6723ABF68E0031454F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0527FC6923ABF68E0031454F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		0527FC6623ABF68E0031454F /* Flender */ = {
 			isa = PBXGroup;
 			children = (
+				05196F3123AC04A000F2507E /* Flender.entitlements */,
 				05196F2623ABFDB200F2507E /* Fonts */,
 				0527FC9923ABF7210031454F /* View Controllers */,
 				0527FC9823ABF7160031454F /* Cards */,
@@ -241,6 +243,11 @@
 				TargetAttributes = {
 					0527FC6323ABF68E0031454F = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					0527FC7A23ABF68F0031454F = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -486,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Flender/Flender.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N25K2AQW53;
 				INFOPLIST_FILE = Flender/Info.plist;
@@ -504,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Flender/Flender.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N25K2AQW53;
 				INFOPLIST_FILE = Flender/Info.plist;
