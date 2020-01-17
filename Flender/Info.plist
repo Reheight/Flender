@@ -33,8 +33,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -43,5 +41,38 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>SCSDKScopes</key>
+    <array>
+        <string>https://auth.snapchat.com/oauth2/api/user.external_id</string>
+        <string>https://auth.snapchat.com/oauth2/api/user.display_name</string>
+        <string>https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar</string>
+    </array>
+    <key>SCSDKClientId</key>
+    <string>3f7422f8-6eb9-4f2e-8417-5bef3c1dd5cc</string>
+    <key>SCSDKRedirectUrl</key>
+    <string>flender://snapchat/authenticate</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>itms-apps</string>
+        <string>snapchat</string>
+        <string>bitmoji-sdk</string>
+    </array>
+    <key>CFBundleURLSchemes</key>
+    <array>
+        <string>flender</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>com.hexhamnetwork.flender</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>flender</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>

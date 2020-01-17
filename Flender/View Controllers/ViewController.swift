@@ -7,8 +7,28 @@
 //
 
 import UIKit
+import Font_Awesome_Swift
+import SCSDKLoginKit
+import SCLAlertView
+import SCSDKBitmojiKit
 
-class ViewController: UIViewController {
+extension UIImage {
+    
+    convenience init?(withContentsOfUrl url: URL) throws {
+        let imageData = try Data(contentsOf: url)
+        
+        self.init(data: imageData)
+    }
+    
+}
+
+class ViewController: UIViewController, SegmentedProgressBarDelegate {
+    @IBOutlet weak var inboxButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var denyButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
+    
+    
     // Enum for card states
     enum CardState {
         case collapsed
@@ -37,7 +57,13 @@ class ViewController: UIViewController {
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     
+    let iconView = SCSDKBitmojiIconView()
+    
     func setupCard() {
+        inboxButton.layer.cornerRadius = 0.5 * inboxButton.bounds.size.width
+        inboxButton.setFAIcon(icon: .FAInbox, forState: .normal)
+        searchButton.layer.cornerRadius = 0.5 * searchButton.bounds.size.width
+        searchButton.setFAIcon(icon: .FAPlus, forState: .normal)
         // Setup starting and ending card height
         endCardHeight = self.view.frame.height * 0.8
         startCardHeight = 48
@@ -52,15 +78,74 @@ class ViewController: UIViewController {
         self.view.addSubview(cardViewController.view)
         cardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - startCardHeight, width: self.view.bounds.width, height: endCardHeight)
         cardViewController.view.clipsToBounds = true
-        cardViewController.view.layer.cornerRadius = 5
+        cardViewController.view.layer.cornerRadius = 2
         cardViewController.view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         // Add tap and pan recognizers
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleCardTap(recognzier:)))
+        let tapToggleGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleCardTap(recognzier:)))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.handleCardPan(recognizer:)))
         
         cardViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
         cardViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
+        cardViewController.exitButton.addGestureRecognizer(tapToggleGestureRecognizer)
+        
+        cardViewController.exitButton.setFAIcon(icon: .FAIdBadge, forState: .normal)
+        cardViewController.exitButton.setFATitleColor(color: .black)
+        
+        cardViewController.shareButton.setFAIcon(icon: .FAExternalLinkSquare, forState: .normal)
+        cardViewController.shareButton.setFATitleColor(color: .black)
+        
+        cardViewController.positionLabel.setFAIcon(icon: .FAAngleUp, iconSize: 30)
+        
+        cardViewController.identityView.addSubview(iconView)
+        iconView.contentMode = .center
+        let screenSize: CGRect = UIScreen.main.bounds
+        iconView.frame = CGRect(x: 0,y: 0, width: 65, height: 65)
+        iconView.center.x = screenSize.maxX / 2
+        iconView.center.y = cardViewController.identityView.frame.maxY / 3
+        iconView.layer.borderWidth = 1
+        iconView.layer.borderColor = UIColor.black.cgColor
+        iconView.layer.cornerRadius = iconView.frame.size.width/2
+        cardViewController.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        cardViewController.shareButton.addTarget(self, action: #selector(shareLink(sender:)), for: .touchUpInside)
+    }
+    
+    func removeSpecialCharsFromString(text: String) -> String {
+        let okayChars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890-_")
+        return text.filter {okayChars.contains($0) }
+    }
+    
+    @objc
+    func shareLink(sender: AnyObject) {
+        //Set the default sharing message.
+        //Set the link to share.
+        let externalID = DataStructure.sharedInstance.getExternalId()
+        let message = "https://flender.hexhamnetwork.com/add/" + removeSpecialCharsFromString(text: externalID)
+        if let link = NSURL(string: "https://flender.hexhamnetwork.com/add/" + removeSpecialCharsFromString(text: externalID))
+        {
+            let objectsToShare = [message,link] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
+    
+    @objc
+    func logout() {
+        SCSDKLoginClient.unlinkAllSessions { (Bool) in
+            if (Bool) {
+                DispatchQueue.main.async {
+                    let alertViewResponder:SCLAlertViewResponder = SCLAlertView().showError("Logout Successful!", subTitle: "You have successfully logged out of Flender!")
+                    alertViewResponder.setDismissBlock {
+                        DispatchQueue.main.async {
+                            let proceed = self.storyboard?.instantiateViewController(withIdentifier: "InitializationController")
+                            self.present(proceed!, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+        }
     }
     
     // Handle tap gesture recognizer
@@ -70,6 +155,15 @@ class ViewController: UIViewController {
         // Animate card when tap finishes
         case .ended:
             animateTransitionIfNeeded(state: nextState, duration: 0.9)
+            if (nextState == .collapsed) {
+                cardViewController.exitButton.setFAIcon(icon: .FAIdBadge, forState: .normal)
+                cardViewController.exitButton.setFATitleColor(color: .black)
+                cardViewController.positionLabel.setFAIcon(icon: .FAAngleUp, iconSize: 30)
+            } else {
+                cardViewController.exitButton.setFAIcon(icon: .FATimesCircle, forState: .normal)
+                cardViewController.exitButton.setFATitleColor(color: .black)
+                cardViewController.positionLabel.setFAIcon(icon: .FAAngleDown, iconSize: 30)
+            }
         default:
             break
         }
@@ -78,6 +172,10 @@ class ViewController: UIViewController {
     // Handle pan gesture recognizer
     @objc
     func handleCardPan (recognizer:UIPanGestureRecognizer) {
+        if (nextState == .collapsed) {
+            return;
+        }
+        
         switch recognizer.state {
         case .began:
             // Start animation if pan begins
@@ -92,17 +190,113 @@ class ViewController: UIViewController {
         case .ended:
             // End animation when pan ends
             continueInteractiveTransition()
+            if (nextState == .collapsed) {
+                cardViewController.exitButton.setFAIcon(icon: .FAIdBadge, forState: .normal)
+                cardViewController.exitButton.setFATitleColor(color: .black)
+                cardViewController.positionLabel.setFAIcon(icon: .FAAngleUp, iconSize: 30)
+            } else {
+                cardViewController.exitButton.setFAIcon(icon: .FATimesCircle, forState: .normal)
+                cardViewController.exitButton.setFATitleColor(color: .black)
+                cardViewController.positionLabel.setFAIcon(icon: .FAAngleDown, iconSize: 30)
+            }
         default:
             break
         }
     }
     
+    @IBOutlet weak var slider: UIView!
+    
+    private var spb: SegmentedProgressBar!
+    private let iv = UIImageView()
+    private let images = [#imageLiteral(resourceName: "img1"), #imageLiteral(resourceName: "img2"), #imageLiteral(resourceName: "img3")]
+    
+    @IBOutlet weak var readBioButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        iv.frame = slider.bounds
+        iv.contentMode = .scaleAspectFit
+        slider.addSubview(iv)
+        slider.sendSubview(toBack: iv)
+        updateImage(index: 0)
+        
+        spb = SegmentedProgressBar(numberOfSegments: images.count, duration: 10)
+        spb.frame = CGRect(x: 15, y: 15, width: slider.frame.width - 30, height: 4)
+        spb.delegate = self
+        spb.topColor = UIColor.white
+        spb.bottomColor = UIColor.white.withAlphaComponent(0.25)
+        spb.padding = 2
+        slider.addSubview(spb)
+        slider.sendSubview(toBack: spb)
+        
+        
+        view.bringSubview(toFront: slider)
+        spb.startAnimation()
+        
+        slider.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedView)))
+        
+        slider.layer.cornerRadius = 10
+ 
         // Initialize Card
         setupCard()
+        
+        denyButton.setFAIcon(icon: .FABan, forState: .normal)
+        denyButton.setFATitleColor(color: .white)
+        denyButton.layer.cornerRadius = 0.5 * denyButton.bounds.size.width
+        
+        acceptButton.setFAIcon(icon: .FAPlus, forState: .normal)
+        acceptButton.setFATitleColor(color: .white)
+        acceptButton.layer.cornerRadius = 0.5 * acceptButton.bounds.size.width
+        
+        readBioButton.layer.cornerRadius = 0.5 * readBioButton.bounds.size.width
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        for touch in touches {
+            let location = touch.location(in: slider)
+            
+            if let touched = touches.first {
+                if touched.view != slider {
+                    
+                } else {
+                    
+                }
+                
+            }
+            
+            if(location.x < 130){
+                spb.rewind()
+            }
+            else {
+                spb.skip()
+            }
+        }
+    }
+
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    func segmentedProgressBarChangedIndex(index: Int) {
+        updateImage(index: index)
+    }
+    
+    func segmentedProgressBarFinished() {
+        for _ in 1...images.count {
+            spb.rewind()
+        }
+    }
+    
+    @objc private func tappedView() {
+        spb.isPaused = !spb.isPaused
+    }
+    
+    private func updateImage(index: Int) {
+        iv.image = images[index]
     }
     
     // Animate transistion function
@@ -120,7 +314,6 @@ class ViewController: UIViewController {
                 case .collapsed:
                     // If collapsed set popover y to the starting height and remove background blur
                     self.cardViewController.view.frame.origin.y = self.view.frame.height - self.startCardHeight
-                    
                     self.visualEffectView.effect = nil
                 }
             }
@@ -146,7 +339,7 @@ class ViewController: UIViewController {
                     
                 case .collapsed:
                     // If the view is collapsed set the corner radius to 0
-                    self.cardViewController.view.layer.cornerRadius = 5
+                    self.cardViewController.view.layer.cornerRadius = 2
                 }
             }
             

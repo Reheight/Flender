@@ -22,6 +22,14 @@
 		0527FC8B23ABF6900031454F /* FlenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527FC8A23ABF6900031454F /* FlenderUITests.swift */; };
 		0527FC9C23ABF75C0031454F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527FC9A23ABF75B0031454F /* CardViewController.swift */; };
 		0527FC9D23ABF75C0031454F /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0527FC9B23ABF75C0031454F /* CardViewController.xib */; };
+		0545F44123C8F631000EAC2F /* CuteFont-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0545F44023C8F631000EAC2F /* CuteFont-Regular.ttf */; };
+		0553FC7923C8FEF7007DCC42 /* SegmentedProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553FC7823C8FEF6007DCC42 /* SegmentedProgressBar.swift */; };
+		05D181DC23CF8B9900940E04 /* InitializationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D181DB23CF8B9900940E04 /* InitializationViewController.swift */; };
+		05D181DE23CF936400940E04 /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D181DD23CF936400940E04 /* DataStructure.swift */; };
+		05D181E023CF96F200940E04 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D181DF23CF96F200940E04 /* LoginViewController.swift */; };
+		10B2E8108553AB164BB4BBDF /* Pods_FlenderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D3843E5A56FB6DDF2A2979 /* Pods_FlenderTests.framework */; };
+		74BDCC1BD5946C51F572CF63 /* Pods_Flender_FlenderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C520579E3E663A0D658CF7 /* Pods_Flender_FlenderUITests.framework */; };
+		7FE9EF059944A495A2B95776 /* Pods_Flender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB269AD664D8D9D0F1C269D /* Pods_Flender.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00C520579E3E663A0D658CF7 /* Pods_Flender_FlenderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flender_FlenderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05196F2723ABFDDD00F2507E /* dacasa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = dacasa.ttf; path = ../../../../../Downloads/dacasa.ttf; sourceTree = "<group>"; };
 		05196F2923ABFE1D00F2507E /* CourierPrime-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CourierPrime-Regular.ttf"; path = "../../../../../Downloads/Courier_Prime/CourierPrime-Regular.ttf"; sourceTree = "<group>"; };
 		05196F2A23ABFE1D00F2507E /* CourierPrime-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CourierPrime-BoldItalic.ttf"; path = "../../../../../Downloads/Courier_Prime/CourierPrime-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -64,6 +73,19 @@
 		0527FC8C23ABF6900031454F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0527FC9A23ABF75B0031454F /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		0527FC9B23ABF75C0031454F /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		0545F44023C8F631000EAC2F /* CuteFont-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CuteFont-Regular.ttf"; path = "../../../../../Downloads/Cute_Font/CuteFont-Regular.ttf"; sourceTree = "<group>"; };
+		0553FC7823C8FEF6007DCC42 /* SegmentedProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentedProgressBar.swift; path = "../../../../Downloads/SegmentedProgressBar-master/SegmentedProgressBar/SegmentedProgressBar.swift"; sourceTree = "<group>"; };
+		05D181DB23CF8B9900940E04 /* InitializationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationViewController.swift; sourceTree = "<group>"; };
+		05D181DD23CF936400940E04 /* DataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
+		05D181DF23CF96F200940E04 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		493B95112C854FDD6730AF7D /* Pods-Flender-FlenderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flender-FlenderUITests.release.xcconfig"; path = "Target Support Files/Pods-Flender-FlenderUITests/Pods-Flender-FlenderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6AB269AD664D8D9D0F1C269D /* Pods_Flender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72B3B18E082F83261F387DD4 /* Pods-Flender.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flender.debug.xcconfig"; path = "Target Support Files/Pods-Flender/Pods-Flender.debug.xcconfig"; sourceTree = "<group>"; };
+		A8D3843E5A56FB6DDF2A2979 /* Pods_FlenderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlenderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B645CA98BF63F5E2821B6C5F /* Pods-Flender-FlenderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flender-FlenderUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flender-FlenderUITests/Pods-Flender-FlenderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF5614DDD4EA409432687EB9 /* Pods-FlenderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlenderTests.release.xcconfig"; path = "Target Support Files/Pods-FlenderTests/Pods-FlenderTests.release.xcconfig"; sourceTree = "<group>"; };
+		EFE9D9789B365924B97995BD /* Pods-FlenderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlenderTests.debug.xcconfig"; path = "Target Support Files/Pods-FlenderTests/Pods-FlenderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F91AE30EE661A10E401E1503 /* Pods-Flender.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flender.release.xcconfig"; path = "Target Support Files/Pods-Flender/Pods-Flender.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE9EF059944A495A2B95776 /* Pods_Flender.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B2E8108553AB164BB4BBDF /* Pods_FlenderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,15 +109,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74BDCC1BD5946C51F572CF63 /* Pods_Flender_FlenderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		008E9C062C04BB5DDBA933A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72B3B18E082F83261F387DD4 /* Pods-Flender.debug.xcconfig */,
+				F91AE30EE661A10E401E1503 /* Pods-Flender.release.xcconfig */,
+				B645CA98BF63F5E2821B6C5F /* Pods-Flender-FlenderUITests.debug.xcconfig */,
+				493B95112C854FDD6730AF7D /* Pods-Flender-FlenderUITests.release.xcconfig */,
+				EFE9D9789B365924B97995BD /* Pods-FlenderTests.debug.xcconfig */,
+				EF5614DDD4EA409432687EB9 /* Pods-FlenderTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		05196F2623ABFDB200F2507E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0545F44023C8F631000EAC2F /* CuteFont-Regular.ttf */,
 				05196F2C23ABFE1D00F2507E /* CourierPrime-Bold.ttf */,
 				05196F2A23ABFE1D00F2507E /* CourierPrime-BoldItalic.ttf */,
 				05196F2B23ABFE1D00F2507E /* CourierPrime-Italic.ttf */,
@@ -110,6 +149,8 @@
 				0527FC7E23ABF68F0031454F /* FlenderTests */,
 				0527FC8923ABF6900031454F /* FlenderUITests */,
 				0527FC6523ABF68E0031454F /* Products */,
+				008E9C062C04BB5DDBA933A4 /* Pods */,
+				4ABEE3C25EA73C2A955E921D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +167,8 @@
 		0527FC6623ABF68E0031454F /* Flender */ = {
 			isa = PBXGroup;
 			children = (
+				05D181DD23CF936400940E04 /* DataStructure.swift */,
+				0553FC7823C8FEF6007DCC42 /* SegmentedProgressBar.swift */,
 				05196F3123AC04A000F2507E /* Flender.entitlements */,
 				05196F2623ABFDB200F2507E /* Fonts */,
 				0527FC9923ABF7210031454F /* View Controllers */,
@@ -171,8 +214,20 @@
 			children = (
 				0527FC6923ABF68E0031454F /* ViewController.swift */,
 				0527FC9A23ABF75B0031454F /* CardViewController.swift */,
+				05D181DB23CF8B9900940E04 /* InitializationViewController.swift */,
+				05D181DF23CF96F200940E04 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4ABEE3C25EA73C2A955E921D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AB269AD664D8D9D0F1C269D /* Pods_Flender.framework */,
+				00C520579E3E663A0D658CF7 /* Pods_Flender_FlenderUITests.framework */,
+				A8D3843E5A56FB6DDF2A2979 /* Pods_FlenderTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0527FC8F23ABF6900031454F /* Build configuration list for PBXNativeTarget "Flender" */;
 			buildPhases = (
+				C60F6401C19DC48A8DA71868 /* [CP] Check Pods Manifest.lock */,
 				0527FC6023ABF68E0031454F /* Sources */,
 				0527FC6123ABF68E0031454F /* Frameworks */,
 				0527FC6223ABF68E0031454F /* Resources */,
+				8C999024DD3F135E03062D13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0527FC9223ABF6900031454F /* Build configuration list for PBXNativeTarget "FlenderTests" */;
 			buildPhases = (
+				B8AB97AEEF5071FD6CD6C3AF /* [CP] Check Pods Manifest.lock */,
 				0527FC7723ABF68F0031454F /* Sources */,
 				0527FC7823ABF68F0031454F /* Frameworks */,
 				0527FC7923ABF68F0031454F /* Resources */,
@@ -217,9 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0527FC9523ABF6900031454F /* Build configuration list for PBXNativeTarget "FlenderUITests" */;
 			buildPhases = (
+				3732B0DFEB1C337591D40CC9 /* [CP] Check Pods Manifest.lock */,
 				0527FC8223ABF6900031454F /* Sources */,
 				0527FC8323ABF6900031454F /* Frameworks */,
 				0527FC8423ABF6900031454F /* Resources */,
+				3EA0AF71F65702ABF1D02306 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0527FC9D23ABF75C0031454F /* CardViewController.xib in Resources */,
+				0545F44123C8F631000EAC2F /* CuteFont-Regular.ttf in Resources */,
 				05196F2D23ABFE1D00F2507E /* CourierPrime-Regular.ttf in Resources */,
 				0527FC7523ABF68F0031454F /* LaunchScreen.storyboard in Resources */,
 				0527FC7223ABF68F0031454F /* Assets.xcassets in Resources */,
@@ -312,12 +373,107 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3732B0DFEB1C337591D40CC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flender-FlenderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EA0AF71F65702ABF1D02306 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flender-FlenderUITests/Pods-Flender-FlenderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flender-FlenderUITests/Pods-Flender-FlenderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flender-FlenderUITests/Pods-Flender-FlenderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C999024DD3F135E03062D13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flender/Pods-Flender-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flender/Pods-Flender-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flender/Pods-Flender-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8AB97AEEF5071FD6CD6C3AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlenderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C60F6401C19DC48A8DA71868 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flender-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0527FC6023ABF68E0031454F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0527FC9C23ABF75C0031454F /* CardViewController.swift in Sources */,
+				0553FC7923C8FEF7007DCC42 /* SegmentedProgressBar.swift in Sources */,
+				05D181DE23CF936400940E04 /* DataStructure.swift in Sources */,
+				05D181DC23CF8B9900940E04 /* InitializationViewController.swift in Sources */,
+				05D181E023CF96F200940E04 /* LoginViewController.swift in Sources */,
 				0527FC6A23ABF68E0031454F /* ViewController.swift in Sources */,
 				0527FC7023ABF68E0031454F /* Flender.xcdatamodeld in Sources */,
 				0527FC6823ABF68E0031454F /* AppDelegate.swift in Sources */,
@@ -491,6 +647,7 @@
 		};
 		0527FC9023ABF6900031454F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72B3B18E082F83261F387DD4 /* Pods-Flender.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Flender/Flender.entitlements;
@@ -510,6 +667,7 @@
 		};
 		0527FC9123ABF6900031454F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F91AE30EE661A10E401E1503 /* Pods-Flender.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Flender/Flender.entitlements;
@@ -529,6 +687,7 @@
 		};
 		0527FC9323ABF6900031454F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFE9D9789B365924B97995BD /* Pods-FlenderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +709,7 @@
 		};
 		0527FC9423ABF6900031454F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF5614DDD4EA409432687EB9 /* Pods-FlenderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -571,6 +731,7 @@
 		};
 		0527FC9623ABF6900031454F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B645CA98BF63F5E2821B6C5F /* Pods-Flender-FlenderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -591,6 +752,7 @@
 		};
 		0527FC9723ABF6900031454F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 493B95112C854FDD6730AF7D /* Pods-Flender-FlenderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
